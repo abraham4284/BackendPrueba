@@ -42,7 +42,8 @@ export const registroGeneral = (rol) => {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
-        maxAge: 1000 * 60 * 60
+        maxAge: 1000 * 60 * 60,
+        path: '/'
       });
       console.log(token);
       res.status(201).json(datosUsuarios);
@@ -97,7 +98,8 @@ export const loginUsuariosClientes = async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'strict',
-      maxAge: 1000 * 60 * 60
+      maxAge: 1000 * 60 * 60,
+      path: '/'
     });
     res.status(201).json(datosUsuarios);
     //Creamos la conexion
