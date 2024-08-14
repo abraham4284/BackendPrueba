@@ -40,8 +40,8 @@ export const registroGeneral = (rol) => {
       const token = createAccesToken(datosUsuarios);
       res.cookie("token", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
+        secure: true,
+        sameSite: 'None',
         maxAge: 1000 * 60 * 60
       });
       console.log(token);
@@ -95,8 +95,8 @@ export const loginUsuariosClientes = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      sameSite: 'lax',
+      secure: true,
+      sameSite: 'None',
       maxAge: 1000 * 60 * 60
     });
     res.status(201).json(datosUsuarios);
